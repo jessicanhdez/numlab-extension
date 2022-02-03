@@ -1,0 +1,25 @@
+{
+    "name": "numlab-highlight",
+    "displayName": "NumLab Highlight",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "nlh",
+            "aliases": ["NumLab", "nlh"],
+            "extensions": [".nl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nlh",
+            "scopeName": "source.nlh",
+            "path": "./syntaxes/nlh.tmLanguage.json"
+        }]
+    }
+}

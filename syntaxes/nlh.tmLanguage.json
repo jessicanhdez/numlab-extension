@@ -33,7 +33,7 @@
 				}
 			]
 		},
-		"numbers":{
+		"numbers": {
 			"patterns": [
 				{
 					"name": "constant.numeric.nlh",
@@ -89,9 +89,6 @@
 				}
 			]
 		},
-		"function-declaration": {
-			
-		},
 		"keywords": {
 			"patterns": [
 				{
@@ -119,6 +116,10 @@
 					"match": "\\b(del|global)\\b"
 				},
 				{
+					"name": "keyword.language.numlab.nlh",
+					"match": "\\b(conf|begsim|endsim|resetstats)\\b"
+				},
+				{
 					"include": "#builtin-exceptions"
 				},
 				{
@@ -126,13 +127,10 @@
 				},
 				{
 					"include": "#builtin-types"
-				},
-				{
-					"include": "#function-declaration"
 				}
 			]
 		},
-		"operators":{
+		"operators": {
 			"patterns": [	
 				{
 					"name": "keyword.operator.arithmetic.nlh",

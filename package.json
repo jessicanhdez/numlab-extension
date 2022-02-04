@@ -1,13 +1,26 @@
 {
     "name": "numlab-highlight",
-    "displayName": "NumLab Highlight",
+    "displayName": "NumLab Highlight Extension",
     "description": "",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.63.0"
     },
+    "publisher": "jessicanunez",
+    "author": {
+        "name": "Jessica Nunez"
+    },
+    "homepage": "https://github.com/jessicanhdez/numlab-highlight.git",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jessicanhdez/numlab-highlight.git"
+    },
     "categories": [
         "Programming Languages"
+    ],
+    "keywords": [
+        "numlab",
+        "highlight"
     ],
     "contributes": {
         "languages": [{

@@ -16,6 +16,12 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#class-declaration"
+		},
+		{
+			"include": "#function-declaration"
 		}
 	],
 	"repository": {
@@ -53,7 +59,7 @@
 				},
 				{
 					"name": "storage.type.structure.nlh",
-					"match": "\\b(def|lambda)\\b"
+					"match": "\\b(lambda)\\b"
 				},
 				{
 					"name": "keyword.exception.handling.nlh",
@@ -79,9 +85,6 @@
 				},
 				{
 					"include": "#builtin-types"
-				},
-				{
-					"include": "#class-declaration"
 				}
 			]
 		},
@@ -151,8 +154,78 @@
 			},
 			"patterns": [
 				{
-					"name": "entity.name.type.class.python",
+					"name": "entity.name.type.class.nlh",
 					"match": "([a-zA-Z])+"
+				}
+			]
+		},
+		"function-declaration": {
+			"name": "meta.function.nlh",
+			"begin": "\\b(def)\\b",
+			"end": "(:|\n)",
+			"beginCaptures": {
+				"1": 
+				{
+					"name": "storage.type.function.nlh"
+				}
+			},
+			"endCaptures": {
+				"1": 
+				{
+					"name": "puntuation.section.function.begin.nlh"	
+				}
+			},
+			"patterns": [
+				{
+					"comment": "function-name",
+					"name": "entity.name.function.nlh",
+					"match": "([a-zA-Z])+"
+				},
+				{
+					"comment": "function-args",
+					"name": "meta.function.args.nlh",
+					"begin": "(\\()",
+					"end": "(\\))",
+					"beginCaptures": {
+						"1": 
+						{
+							"name": "punctuation.definition.parameters.begin.nlh"
+						}
+					},
+					"endCaptures": {
+						"1":
+						{
+							"name": "punctuation.definition.parameters.end.nlh"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#operators"
+						},
+						{
+							"name": "variable.parameter.function.nlh",
+							"match": "([a-zA-Z0-9])+"
+						}
+					]
+				},
+				{
+					"comment": "function-return-value",
+					"begin": "(->)", 
+					"end": "(:)",
+					"beginCaptures": {
+						"1": 
+						{
+							"name": "punctuation.separator.annotation.nlh"
+						}
+					},
+					"patterns": [
+						{
+							"match": "."
+						}
+					]
 				}
 			]
 		},

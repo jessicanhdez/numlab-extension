@@ -41,6 +41,50 @@
 				}
 			]
 		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.flow.nlh",
+					"match": "\\b(if|else|elif|while|for|return|yield|break|continue|pass)\\b"
+				},
+				{
+					"name": "constant.language.nlh",
+					"match": "\\b(True|False|None|NotImplemented)\\b"
+				},
+				{
+					"name": "storage.type.structure.nlh",
+					"match": "\\b(def|lambda)\\b"
+				},
+				{
+					"name": "keyword.exception.handling.nlh",
+					"match": "\\b(try|except|raise|finally|assert|with)\\b"
+				},
+				{
+					"name": "keyword.import.handling.nlh",
+					"match": "\\b(import|from|as)\\b"
+				},
+				{
+					"name": "keyword.variable.handling.nlh",
+					"match": "\\b(del|global)\\b"
+				},
+				{
+					"name": "keyword.language.numlab.nlh",
+					"match": "\\b(conf|begsim|endsim|resetstats)\\b"
+				},
+				{
+					"include": "#builtin-exceptions"
+				},
+				{
+					"include": "#builtin-functions"
+				},
+				{
+					"include": "#builtin-types"
+				},
+				{
+					"include": "#class-declaration"
+				}
+			]
+		},
 		"builtin-exceptions": {
 			"patterns": [
 				{
@@ -89,44 +133,26 @@
 				}
 			]
 		},
-		"keywords": {
+		"class-declaration": {
+			"name": "meta.class.nlh",
+			"begin": "\\b(class)\\b",
+			"end": "(:|\n)",
+			"beginCaptures": {
+				"1": 
+				{
+					"name": "storage.type.class.nlh"
+				}
+			},
+			"endCaptures": {
+				"1": 
+				{
+					"name": "puntuation.section.class.begin.nlh"	
+				}
+			},
 			"patterns": [
 				{
-					"name": "keyword.control.flow.nlh",
-					"match": "\\b(if|else|elif|while|for|return|yield|break|continue|pass)\\b"
-				},
-				{
-					"name": "constant.language.nlh",
-					"match": "\\b(True|False|None|NotImplemented)\\b"
-				},
-				{
-					"name": "storage.type.strucure.nlh",
-					"match": "\\b(def|class|lambda)\\b"
-				},
-				{
-					"name": "keyword.exception.handling.nlh",
-					"match": "\\b(try|except|raise|finally|assert|with)\\b"
-				},
-				{
-					"name": "keyword.import.handling.nlh",
-					"match": "\\b(import|from|as)\\b"
-				},
-				{
-					"name": "keyword.variable.handling.nlh",
-					"match": "\\b(del|global)\\b"
-				},
-				{
-					"name": "keyword.language.numlab.nlh",
-					"match": "\\b(conf|begsim|endsim|resetstats)\\b"
-				},
-				{
-					"include": "#builtin-exceptions"
-				},
-				{
-					"include": "#builtin-functions"
-				},
-				{
-					"include": "#builtin-types"
+					"name": "entity.name.type.class.python",
+					"match": "([a-zA-Z])+"
 				}
 			]
 		},
